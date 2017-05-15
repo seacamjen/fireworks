@@ -77,7 +77,7 @@ function Firework( sx, sy, tx, ty ) {
 	this.acceleration = 1.05;
 	this.brightness = random( 50, 70 );
 	// circle target indicator radius
-	this.targetRadius = 1;
+	this.targetRadius = 5;
 }
 
 // update firework
@@ -121,7 +121,8 @@ Firework.prototype.draw = function() {
 	// move to the last tracked coordinate in the set, then draw a line to the current x and y
 	ctx.moveTo( this.coordinates[ this.coordinates.length - 1][ 0 ], this.coordinates[ this.coordinates.length - 1][ 1 ] );
 	ctx.lineTo( this.x, this.y );
-	ctx.strokeStyle = 'hsl(' + hue + ', 100%, ' + this.brightness + '%)';
+	ctx.strokeStyle = 'orange';
+  // 'hsl(' + hue + ', 100%, ' + this.brightness + '%)';
 	ctx.stroke();
 
 	ctx.beginPath();
